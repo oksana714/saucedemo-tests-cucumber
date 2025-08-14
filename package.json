@@ -7,7 +7,6 @@
     "wdio": "wdio run ./wdio.conf.js",
     "format": "prettier --write ."
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",

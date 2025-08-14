@@ -1,13 +1,14 @@
 const { Given, When, Then } = require('@wdio/cucumber-framework');
+const loginPage = require('../../pages/pages/LoginPage');
 
 Given(/^User is located on the main page of saucedemo website$/, async () => {
-    await browser.url('https://www.saucedemo.com/')
+  await loginPage.open();
 });
 
 When(/^User click Login button$/, async () => {
-    await $('#login-button').click()
+  await loginPage.clickLoginButton();
 });
 
 Then(/^User should see Epic sadface: Username is required error message$/, async () => {
-    await expect($('.error-message-container')).toHaveText('Epic sadface: Username is required')
+  await loginPage.getErrorText('Epic sadface: Username is required');
 });
